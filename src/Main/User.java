@@ -1,5 +1,12 @@
 package Main;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -17,7 +24,37 @@ public class User extends javax.swing.JFrame {
     public User() {
         initComponents();
     }
+    Connection con;
+    PreparedStatement pst;
 
+    
+    /*
+    public class DBConnection {
+    private static final String URL = "jdbc:mysql://localhost:3306/swing_demo";
+    private static final String USER = "root";
+    private static final String PASS = "root";
+
+    public static Connection getConnection() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL, USER, PASS);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conn;
+    }
+}
+    */
+    public void Connect()
+    {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/kuhospital", "root", "");
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,9 +124,15 @@ public class User extends javax.swing.JFrame {
         textPassword.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
 
         textUserType.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
+        textUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pharmacist", "Doctor", "Receptionist" }));
 
         jButton1.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton1.setText("Create");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton2.setText("Cancel");
@@ -120,11 +163,11 @@ public class User extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(textPassword)
                                 .addComponent(textUserType, 0, 331, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(textUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(62, 62, 62)
                                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(182, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -187,6 +230,15 @@ public class User extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textNameActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        String Name = textName.getText();
+        String UserName = textUserName.getText();
+        String Password = textPassword.getText();
+        String UserType = textUserType.getSelectedItem().toString();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,3 +291,5 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> textUserType;
     // End of variables declaration//GEN-END:variables
 }
+
+

@@ -80,11 +80,11 @@
                                   <Component id="textPassword" max="32767" attributes="0"/>
                                   <Component id="textUserType" pref="331" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="textUserName" min="-2" pref="331" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                                       <Component id="jButton2" min="-2" pref="101" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -224,7 +224,11 @@
               <Font name="Calibri" size="16" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
+              <StringArray count="3">
+                <StringItem index="0" value="Pharmacist"/>
+                <StringItem index="1" value="Doctor"/>
+                <StringItem index="2" value="Receptionist"/>
+              </StringArray>
             </Property>
           </Properties>
           <AuxValues>
@@ -238,6 +242,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Create"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>

@@ -162,7 +162,7 @@
               <StringArray count="3">
                 <StringItem index="0" value="Pharmacist"/>
                 <StringItem index="1" value="Doctor"/>
-                <StringItem index="2" value="Receptionst"/>
+                <StringItem index="2" value="Receptionist"/>
               </StringArray>
             </Property>
           </Properties>

@@ -1,13 +1,16 @@
 package Main;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.sql.Connection;
+//import java.sql.PreparedStatement;
+//import java.sql.DriverManager;
+//import java.sql.SQLException;
+//import java.sql.Statement;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -23,10 +26,14 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public Login() {
+    private String userType;
+    private String userID;
+    public Login(String userType, String userID) {
+        this.userType = userType;
+        this.userID = userID;
         initComponents();
     }
-    ResultSet res;
+    //ResultSet res;
     
 //    Connection conn;
 //    PreparedStatement pst;
@@ -86,7 +93,7 @@ public class Login extends javax.swing.JFrame {
         textpass.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
 
         textcombobox.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        textcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pharmacist", "Doctor", "Receptionst" }));
+        textcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pharmacist", "Doctor", "Receptionist" }));
 
         jButton1.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton1.setText("Login");
@@ -166,47 +173,84 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false); //this will exit the interface.
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        try{
-           Class.forName("com.mysql.jdbc.Driver");
-           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kuhospital", "root", ""); 
-           
-           String username = textusername.getText();
-           String password = textpass.getText();
-           String utype = textcombobox.getSelectedItem().toString();
-           
-           String sql = "select * from usertable where username = ? and password = ? and usertype = ?";
-           PreparedStatement ptst = conn.prepareStatement(sql);
-           
-           ptst.setString(1, username);
-           ptst.setString(2, password);
-           ptst.setString(3, utype);
-           
-           res = ptst.executeQuery();
-           
-           if(res.next())
-           {
-               int userid = res.getInt("Id");
-               this.setVisible(false);
-               new Main(userid,username,utype).setVisible(true);
-           }
-           else
-           {
-               JOptionPane.showMessageDialog(this, "UserName or Password do not match.");
-               textusername.setText("");
-               textpass.setText("");
-               textcombobox.setSelectedIndex(-1);
-               textusername.requestFocus();
-           }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this, e);
-        }
+          String username = textusername.getText();
+          String password = textpass.getText(); 
+          if(username.equals("") || password.equals("")){
+              JOptionPane.showMessageDialog(this, "Please Enter Credentials");
+          }
+          else{
+              if(isLoginSuccessful(username, password)){
+                  JOptionPane.showMessageDialog(this, "Login successful");
+                  Main m = new Main(username, userType, userID);
+                  m.setVisible(true);
+              }
+              else{
+                  JOptionPane.showMessageDialog(this, "User not found");
+              }
+          }   
+//        try{
+//           Class.forName("com.mysql.jdbc.Driver");
+//           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kuhospital", "root", ""); 
+//           
+//           String username = textusername.getText();
+//           String password = textpass.getText();
+//           String utype = textcombobox.getSelectedItem().toString();
+//           
+//           String sql = "select * from usertable where username = ? and password = ? and usertype = ?";
+//           PreparedStatement ptst = conn.prepareStatement(sql);
+//           
+//           ptst.setString(1, username);
+//           ptst.setString(2, password);
+//           ptst.setString(3, utype);
+//           
+//           res = ptst.executeQuery();
+//           
+//           if(res.next())
+//           {
+//               int userid = res.getInt("Id");
+//               this.setVisible(false);
+//               new Main(userid,username,utype).setVisible(true);
+//           }
+//           else
+//           {
+//               JOptionPane.showMessageDialog(this, "UserName or Password do not match.");
+//               textusername.setText("");
+//               textpass.setText("");
+//               textcombobox.setSelectedIndex(-1);
+//               textusername.requestFocus();
+//           }
+//        }
+//        catch (Exception e)
+//        {
+//            JOptionPane.showMessageDialog(this, e);
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    private boolean isLoginSuccessful(String username, String password){
+        try(BufferedReader reader = new BufferedReader(new FileReader("users.txt"))){
+            String line;
+            boolean userFound = false;
+            while((line = reader.readLine())!=null){
+                String[] parts = line.split(" : ");
+                if(parts.length >= 2){
+                    String usernameFromFile = parts[0];
+                    String passwordFromFile = parts[1];
+                    if(usernameFromFile.equals(username) && passwordFromFile.equals(password)){
+                        userFound = true;
+                        break;
+                    }
+                }
+            }
+            return userFound;
+        }
+        catch(IOException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "File not found.");
+            return false;
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -235,11 +279,7 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

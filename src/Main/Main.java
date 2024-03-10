@@ -97,7 +97,7 @@ public class Main extends javax.swing.JFrame {
         jButton3.setText("Create Channel");
 
         jButton4.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        jButton4.setText("View Channel");
+        jButton4.setText("View Profile");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

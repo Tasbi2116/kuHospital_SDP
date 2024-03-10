@@ -294,7 +294,8 @@ public class User extends javax.swing.JFrame {
         if(!userName.isEmpty() && password.length() > 0){
             try{
                 BufferedWriter writer = new BufferedWriter(new FileWriter("users.txt",true));
-                writer.write(userName + " : " + password + " : " + ID + " : " + name + " : " + userType);
+                writer.write(userName + " : " + password + " : " + userType + " : " + name + " : " + ID);
+                writer.newLine();
                 writer.close();
                 JOptionPane.showMessageDialog(this, "Registration successful");
                 

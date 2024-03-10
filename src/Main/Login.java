@@ -178,6 +178,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
           String username = textusername.getText();
           String password = textpass.getText(); 
+          userType = textcombobox.getSelectedItem().toString();
           if(username.equals("") || password.equals("")){
               JOptionPane.showMessageDialog(this, "Please Enter Credentials");
           }
@@ -234,10 +235,11 @@ public class Login extends javax.swing.JFrame {
             boolean userFound = false;
             while((line = reader.readLine())!=null){
                 String[] parts = line.split(" : ");
-                if(parts.length >= 2){
+                if(parts.length >= 3){
                     String usernameFromFile = parts[0];
                     String passwordFromFile = parts[1];
-                    if(usernameFromFile.equals(username) && passwordFromFile.equals(password)){
+                    String userTypeFromFile = parts[2];
+                    if(usernameFromFile.equals(username) && passwordFromFile.equals(password) && userTypeFromFile.equals(userType)){
                         userFound = true;
                         break;
                     }

@@ -1,5 +1,8 @@
 package Main;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,8 +17,11 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    private viewUser users;
+    
     public Main() {
         initComponents();
+        
     }
     
     String newid;
@@ -92,6 +98,11 @@ public class Main extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton4.setText("View Channel");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton5.setText("Prescription");
@@ -275,6 +286,29 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        try(BufferedReader reader = new BufferedReader(new FileReader("users.txt"))){
+            String line;
+            while((line = reader.readLine())!=null){
+                String[] parts = line.split(" : ");
+                if(parts.length >= 5){
+                    String usernameFromFile = parts[0];
+                    String passwordFromFile = parts[1];
+                    String userTypeFromFile = parts[2];
+                    String userFullName = parts[3]; 
+                    String userID = parts[4];
+                    
+                    users = new viewUser(usernameFromFile, passwordFromFile, userTypeFromFile, userFullName, userID);
+                    users.setVisible(true);
+                }
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

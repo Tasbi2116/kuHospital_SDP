@@ -39,8 +39,16 @@ public class Main extends javax.swing.JFrame {
         jLabel5.setText(usertype);
         
         this.newid = userID;
+        
+        if(userType.equals("Doctor"))
+        {
+            jButton3.setVisible(false);
+            jButton6.setVisible(false);
+            jButton7.setVisible(false);
+        }
     }
 
+    
     
     
     /**

@@ -1,3 +1,0 @@
-tasbi : 123 : Pharmacist : tasbi : 210216
-tasbi : 1234 : Doctor : Md Tasbi Hassan : 210216
-tasbi : 1234 : Doctor : Md Tasbi Hassan : 210216

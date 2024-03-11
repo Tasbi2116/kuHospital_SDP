@@ -28,6 +28,7 @@ public class Login extends javax.swing.JFrame {
      */
     private String userType;
     private String userID;
+    
     public Login(String userType, String userID) {
         this.userType = userType;
         this.userID = userID;

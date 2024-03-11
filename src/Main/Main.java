@@ -40,12 +40,12 @@ public class Main extends javax.swing.JFrame {
         
         this.newid = userID;
         
-        if(userType.equals("Doctor"))
-        {
-            jButton3.setVisible(false);
-            jButton6.setVisible(false);
-            jButton7.setVisible(false);
-        }
+//        if(userType.equals("Doctor"))
+//        {
+//            jButton3.setVisible(false);
+//            jButton6.setVisible(false);
+//            jButton7.setVisible(false);
+//        }
     }
 
     
@@ -108,6 +108,11 @@ public class Main extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton3.setText("Create Channel");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton4.setText("View Profile");
@@ -119,6 +124,11 @@ public class Main extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton5.setText("Prescription");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton6.setText("Create Item");
@@ -133,9 +143,19 @@ public class Main extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton8.setText("View Doctor");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton9.setText("Log Out");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -289,6 +309,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Patient P = new Patient();
         P.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -323,13 +344,38 @@ public class Main extends javax.swing.JFrame {
         catch(IOException e){
             e.printStackTrace();
         }
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Doctor D = new Doctor();
         D.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Channel N = new Channel();
+        N.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        Doctor D = new Doctor();
+        D.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

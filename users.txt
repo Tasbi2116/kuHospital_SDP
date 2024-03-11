@@ -1,2 +1,0 @@
-tasbi : 1234 : Receptionist : Tasbi Hassan : 210216
-mursalin : 4321 : Pharmacist : Mursalin Biswash : 210209

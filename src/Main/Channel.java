@@ -25,12 +25,12 @@ import javax.swing.RowFilter;
  *
  * @author user
  */
-public class Doctor extends javax.swing.JFrame {
+public class Channel extends javax.swing.JFrame {
 
     /**
      * Creates new form Patient_reg
      */
-    public Doctor() {
+    public Channel() {
         initComponents();
         loadDataFromFile();
     }
@@ -50,20 +50,18 @@ public class Doctor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        DoctorNametxt = new javax.swing.JTextField();
-        Specialtxt = new javax.swing.JTextField();
-        DoctorNotxt = new javax.swing.JTextField();
-        Qualificationtxt = new javax.swing.JTextField();
+        DoctorNameChTxt = new javax.swing.JTextField();
+        PatientNameChTxt = new javax.swing.JTextField();
+        ChannelNotxt = new javax.swing.JTextField();
+        RoomNoChTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Fesstxt = new javax.swing.JTextField();
+        DateChTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        DoctorPhonetxt = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTable3 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,7 +76,7 @@ public class Doctor extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Doctor No");
+        jLabel1.setText("Channel No");
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,49 +84,39 @@ public class Doctor extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Specialization");
+        jLabel3.setText("Patient Name");
 
-        Specialtxt.addActionListener(new java.awt.event.ActionListener() {
+        PatientNameChTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpecialtxtActionPerformed(evt);
+                PatientNameChTxtActionPerformed(evt);
             }
         });
 
-        DoctorNotxt.addActionListener(new java.awt.event.ActionListener() {
+        ChannelNotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorNotxtActionPerformed(evt);
+                ChannelNotxtActionPerformed(evt);
             }
         });
 
-        Qualificationtxt.addActionListener(new java.awt.event.ActionListener() {
+        RoomNoChTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QualificationtxtActionPerformed(evt);
+                RoomNoChTxtActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Qualification");
+        jLabel5.setText("Room No");
 
-        Fesstxt.addActionListener(new java.awt.event.ActionListener() {
+        DateChTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FesstxtActionPerformed(evt);
+                DateChTxtActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Channel fee");
-
-        jLabel7.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Phone");
-
-        DoctorPhonetxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorPhonetxtActionPerformed(evt);
-            }
-        });
+        jLabel6.setText("Channel Date");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -138,49 +126,44 @@ public class Doctor extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DoctorNametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                    .addComponent(DoctorNotxt)
-                    .addComponent(Specialtxt)
-                    .addComponent(Qualificationtxt)
-                    .addComponent(Fesstxt)
-                    .addComponent(DoctorPhonetxt))
+                    .addComponent(DoctorNameChTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(ChannelNotxt)
+                    .addComponent(PatientNameChTxt)
+                    .addComponent(RoomNoChTxt)
+                    .addComponent(DateChTxt))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DoctorNotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ChannelNotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DoctorNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Specialtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Qualificationtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Fesstxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(31, 31, 31)
+                    .addComponent(DoctorNameChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DoctorPhonetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(52, 52, 52))
+                    .addComponent(PatientNameChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RoomNoChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DateChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(70, 70, 70))
         );
 
         jButton1.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
@@ -207,9 +190,9 @@ public class Doctor extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setBackground(new java.awt.Color(0, 153, 153));
-        jTable2.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable3.setBackground(new java.awt.Color(0, 153, 153));
+        jTable3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -225,12 +208,12 @@ public class Doctor extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable2MouseClicked(evt);
+                jTable3MouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTable3);
 
         jButton5.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton5.setText("Update");
@@ -276,8 +259,6 @@ public class Doctor extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jPanel2.getAccessibleContext().setAccessibleName("Doctor");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -307,12 +288,12 @@ public class Doctor extends javax.swing.JFrame {
             Vector<Vector> tableData = (Vector<Vector>) input.readObject();
             input.close();
             file.close();
-            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+            DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
             
             for(int i=0; i<tableData.size(); i++)
             {
                 Vector row = tableData.get(i);
-                model.addRow(new Object[]{row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5)});
+                model.addRow(new Object[]{row.get(0), row.get(1), row.get(2), row.get(3), row.get(4)});
             }
         }
         catch (Exception e)
@@ -322,7 +303,7 @@ public class Doctor extends javax.swing.JFrame {
     }
     
     private void formWindowClosed(java.awt.event.WindowEvent evt){
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         Vector<Vector> tableData = model.getDataVector();
         
         try{
@@ -347,37 +328,35 @@ public class Doctor extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String DoctorNo = DoctorNotxt.getText();
-        String DoctorName = DoctorNametxt.getText();
-        String Special = Specialtxt.getText();
-        String Qualification = Qualificationtxt.getText();
-        String Fess = Fesstxt.getText();
-        String DoctorPhone = DoctorPhonetxt.getText();
+        String ChannelNo = ChannelNotxt.getText();
+        String DoctorName = DoctorNameChTxt.getText();
+        String PatientName = PatientNameChTxt.getText();
+        String RoomNo = RoomNoChTxt.getText();
+        String Date = DateChTxt.getText();
         
-        String DoctorData = DoctorNo + "," + DoctorName + "," + Special + "," + Qualification + "," + Fess + "," + DoctorPhone;
+        String ChannelData = ChannelNo + "," + DoctorName + "," + PatientName + "," + RoomNo + "," + Date;
         
-        if(DoctorNo.isEmpty() || DoctorName.isEmpty() || Special.isEmpty() || Qualification.isEmpty() || Fess.isEmpty() || DoctorPhone.isEmpty())
+        if(ChannelNo.isEmpty() || DoctorName.isEmpty() || PatientName.isEmpty() || RoomNo.isEmpty() || Date.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Please Fill up all fields", "Try Again", JOptionPane.ERROR_MESSAGE);
         }
         else
         {
-            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-            model.addRow(new Object[] {DoctorNo, DoctorName, Special, Qualification, Fess, DoctorPhone});
-            DoctorNotxt.setText("");
-            DoctorNametxt.setText("");
-            Specialtxt.setText("");
-            Qualificationtxt.setText("");
-            Fesstxt.setText("");
-            DoctorPhonetxt.setText("");     
+            DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+            model.addRow(new Object[] {ChannelNo, DoctorName, PatientName, RoomNo, Date});
+            ChannelNotxt.setText("");
+            DoctorNameChTxt.setText("");
+            PatientNameChTxt.setText("");
+            RoomNoChTxt.setText("");
+            DateChTxt.setText("");     
         }
-        saveToFile(DoctorData);
+        saveToFile(ChannelData);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void saveToFile(String DoctorData){
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter ("DoctorData.txt", true))){
-            writer.write(DoctorData + "\n");
+    private void saveToFile(String ChannelData){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter ("ChannelData.txt", true))){
+            writer.write(ChannelData + "\n");
         }
         catch (IOException e)
         {
@@ -387,8 +366,8 @@ public class Doctor extends javax.swing.JFrame {
     
     private void loadDataFromFile()
     {
-        File file = new File("DoctorData.txt");
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        File file = new File("ChannelData.txt");
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         
         if(file.exists())
         {
@@ -396,10 +375,10 @@ public class Doctor extends javax.swing.JFrame {
                 String line;
                 while ((line = reader.readLine()) != null)
                 { 
-                    String[] DoctorData = line.split(",");
-                    if(DoctorData.length == 6)
+                    String[] ChannelData = line.split(",");
+                    if(ChannelData.length == 5)
                     {
-                        model.addRow(DoctorData);
+                        model.addRow(ChannelData);
                     }
                 }
             }
@@ -409,25 +388,21 @@ public class Doctor extends javax.swing.JFrame {
             }
         }
     }
-    private void DoctorNotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorNotxtActionPerformed
+    private void ChannelNotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChannelNotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DoctorNotxtActionPerformed
+    }//GEN-LAST:event_ChannelNotxtActionPerformed
 
-    private void SpecialtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpecialtxtActionPerformed
+    private void PatientNameChTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientNameChTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SpecialtxtActionPerformed
+    }//GEN-LAST:event_PatientNameChTxtActionPerformed
 
-    private void QualificationtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QualificationtxtActionPerformed
+    private void RoomNoChTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoomNoChTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_QualificationtxtActionPerformed
+    }//GEN-LAST:event_RoomNoChTxtActionPerformed
 
-    private void FesstxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FesstxtActionPerformed
+    private void DateChTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateChTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FesstxtActionPerformed
-
-    private void DoctorPhonetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorPhonetxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DoctorPhonetxtActionPerformed
+    }//GEN-LAST:event_DateChTxtActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -436,52 +411,48 @@ public class Doctor extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         
         //set data to text field when raw is selected
         
-        String DoctorNo = model.getValueAt(jTable2.getSelectedRow(),0).toString();
-        String DoctorName = model.getValueAt(jTable2.getSelectedRow(),1).toString();
-        String Special = model.getValueAt(jTable2.getSelectedRow(),2).toString();
-        String Qualification = model.getValueAt(jTable2.getSelectedRow(),3).toString();
-        String Fess = model.getValueAt(jTable2.getSelectedRow(),4).toString();
-        String DoctorPhone = model.getValueAt(jTable2.getSelectedRow(),5).toString();
+        String ChannelNo = model.getValueAt(jTable3.getSelectedRow(),0).toString();
+        String DoctorName = model.getValueAt(jTable3.getSelectedRow(),1).toString();
+        String PatientName = model.getValueAt(jTable3.getSelectedRow(),2).toString();
+        String RoomNo = model.getValueAt(jTable3.getSelectedRow(),3).toString();
+        String Date = model.getValueAt(jTable3.getSelectedRow(),4).toString();
         
         // set to textfiled
-        DoctorNotxt.setText(DoctorNo);
-        DoctorNametxt.setText(DoctorName);
-        Specialtxt.setText(Special);
-        Qualificationtxt.setText(Qualification);
-        Fesstxt.setText(Fess);
-        DoctorPhonetxt.setText(DoctorPhone);
-    }//GEN-LAST:event_jTable2MouseClicked
+        ChannelNotxt.setText(ChannelNo);
+        DoctorNameChTxt.setText(DoctorName);
+        PatientNameChTxt.setText(PatientName);
+        RoomNoChTxt.setText(RoomNo);
+        DateChTxt.setText(Date);
+    }//GEN-LAST:event_jTable3MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        if(jTable2.getSelectedRowCount() == 1)
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        if(jTable3.getSelectedRowCount() == 1)
         {
             // if selected one row
-            String DoctorNo = DoctorNotxt.getText();
-            String DoctorName = DoctorNametxt.getText();
-            String Special = Specialtxt.getText();
-            String Qualification = Qualificationtxt.getText();
-            String Fess = Fesstxt.getText();
-            String DoctorPhone = DoctorPhonetxt.getText();
+            String ChannelNo = ChannelNotxt.getText();
+            String DoctorName = DoctorNameChTxt.getText();
+            String PatientName = PatientNameChTxt.getText();
+            String RoomNo = RoomNoChTxt.getText();
+            String Date = DateChTxt.getText();
             
-            model.setValueAt(DoctorNo, jTable2.getSelectedRow(), 0);
-            model.setValueAt(DoctorName, jTable2.getSelectedRow(), 1);
-            model.setValueAt(Special, jTable2.getSelectedRow(), 2);
-            model.setValueAt(Qualification, jTable2.getSelectedRow(), 3);
-            model.setValueAt(Fess, jTable2.getSelectedRow(), 4);
-            model.setValueAt(DoctorPhone, jTable2.getSelectedRow(), 5);
+            model.setValueAt(ChannelNo, jTable3.getSelectedRow(), 0);
+            model.setValueAt(DoctorName, jTable3.getSelectedRow(), 1);
+            model.setValueAt(PatientName, jTable3.getSelectedRow(), 2);
+            model.setValueAt(RoomNo, jTable3.getSelectedRow(), 3);
+            model.setValueAt(Date, jTable3.getSelectedRow(), 4);
             
             JOptionPane.showMessageDialog(this, "Updated Successfully.");
         }
         else{
-            if(jTable2.getRowCount()==0){
+            if(jTable3.getRowCount()==0){
                 JOptionPane.showMessageDialog(this, "Table is empty.");
             }
             else{
@@ -509,32 +480,33 @@ public class Doctor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Doctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Doctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Doctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Doctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Doctor().setVisible(true);
+                new Channel().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DoctorNametxt;
-    private javax.swing.JTextField DoctorNotxt;
-    private javax.swing.JTextField DoctorPhonetxt;
-    private javax.swing.JTextField Fesstxt;
-    private javax.swing.JTextField Qualificationtxt;
-    private javax.swing.JTextField Specialtxt;
+    private javax.swing.JTextField ChannelNotxt;
+    private javax.swing.JTextField DateChTxt;
+    private javax.swing.JTextField DoctorNameChTxt;
+    private javax.swing.JTextField PatientNameChTxt;
+    private javax.swing.JTextField RoomNoChTxt;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -545,10 +517,9 @@ public class Doctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
 }

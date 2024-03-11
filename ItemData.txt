@@ -1,0 +1,2 @@
+1,Napa,Fever, Headache,10/-,500
+2,Monas,Athma,14/-,650

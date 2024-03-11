@@ -25,12 +25,12 @@ import javax.swing.RowFilter;
  *
  * @author user
  */
-public class Channel extends javax.swing.JFrame {
+public class Item extends javax.swing.JFrame {
 
     /**
      * Creates new form Patient_reg
      */
-    public Channel() {
+    public Item() {
         initComponents();
         loadDataFromFile();
     }
@@ -50,18 +50,18 @@ public class Channel extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        DoctorNameChTxt = new javax.swing.JTextField();
-        PatientNameChTxt = new javax.swing.JTextField();
-        ChannelNotxt = new javax.swing.JTextField();
-        RoomNoChTxt = new javax.swing.JTextField();
+        ItemNametxt = new javax.swing.JTextField();
+        DescriptionTxt = new javax.swing.JTextField();
+        ItemNotxt = new javax.swing.JTextField();
+        priceTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        DateChTxt = new javax.swing.JTextField();
+        QuantityTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTable4 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,53 +70,53 @@ public class Channel extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Channel", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 20), new java.awt.Color(255, 255, 51))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Item", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 20), new java.awt.Color(255, 255, 51))); // NOI18N
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Channel No");
+        jLabel1.setText("Item No");
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Doctor Name");
+        jLabel2.setText("Item Name");
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Patient Name");
+        jLabel3.setText("Description");
 
-        PatientNameChTxt.addActionListener(new java.awt.event.ActionListener() {
+        DescriptionTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PatientNameChTxtActionPerformed(evt);
+                DescriptionTxtActionPerformed(evt);
             }
         });
 
-        ChannelNotxt.addActionListener(new java.awt.event.ActionListener() {
+        ItemNotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChannelNotxtActionPerformed(evt);
+                ItemNotxtActionPerformed(evt);
             }
         });
 
-        RoomNoChTxt.addActionListener(new java.awt.event.ActionListener() {
+        priceTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RoomNoChTxtActionPerformed(evt);
+                priceTxtActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Room No");
+        jLabel5.setText("Sell Price");
 
-        DateChTxt.addActionListener(new java.awt.event.ActionListener() {
+        QuantityTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DateChTxtActionPerformed(evt);
+                QuantityTxtActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Channel Date");
+        jLabel6.setText("Qty");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -126,18 +126,17 @@ public class Channel extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)))
+                    .addComponent(jLabel6))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DoctorNameChTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                    .addComponent(ChannelNotxt)
-                    .addComponent(PatientNameChTxt)
-                    .addComponent(RoomNoChTxt)
-                    .addComponent(DateChTxt))
+                    .addComponent(ItemNametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(ItemNotxt)
+                    .addComponent(DescriptionTxt)
+                    .addComponent(priceTxt)
+                    .addComponent(QuantityTxt))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -145,25 +144,25 @@ public class Channel extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ChannelNotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ItemNotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DoctorNameChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ItemNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(32, 32, 32)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PatientNameChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DescriptionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RoomNoChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(26, 26, 26)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DateChTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(QuantityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(70, 70, 70))
+                .addGap(58, 58, 58))
         );
 
         jButton1.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
@@ -190,14 +189,14 @@ public class Channel extends javax.swing.JFrame {
             }
         });
 
-        jTable3.setBackground(new java.awt.Color(0, 153, 153));
-        jTable3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTable4.setBackground(new java.awt.Color(0, 153, 153));
+        jTable4.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Channel no ", "Doctor Name ", "Patient Name", "Room No", "Date"
+                "Item no ", "Item Name ", "Description", "Sell price", "Qty"
             }
         ) {
             Class[] types = new Class [] {
@@ -208,12 +207,12 @@ public class Channel extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable3MouseClicked(evt);
+                jTable4MouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable3);
+        jScrollPane2.setViewportView(jTable4);
 
         jButton5.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton5.setText("Update");
@@ -288,7 +287,7 @@ public class Channel extends javax.swing.JFrame {
             Vector<Vector> tableData = (Vector<Vector>) input.readObject();
             input.close();
             file.close();
-            DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+            DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
             
             for(int i=0; i<tableData.size(); i++)
             {
@@ -303,7 +302,7 @@ public class Channel extends javax.swing.JFrame {
     }
     
     private void formWindowClosed(java.awt.event.WindowEvent evt){
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
         Vector<Vector> tableData = model.getDataVector();
         
         try{
@@ -328,35 +327,35 @@ public class Channel extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String ChannelNo = ChannelNotxt.getText();
-        String DoctorName = DoctorNameChTxt.getText();
-        String PatientName = PatientNameChTxt.getText();
-        String RoomNo = RoomNoChTxt.getText();
-        String Date = DateChTxt.getText();
+        String ItemNo = ItemNotxt.getText();
+        String ItemName = ItemNametxt.getText();
+        String Description = DescriptionTxt.getText();
+        String SellPrice = priceTxt.getText();
+        String Quantity = QuantityTxt.getText();
         
-        String ChannelData = ChannelNo + "," + DoctorName + "," + PatientName + "," + RoomNo + "," + Date;
+        String ItemData = ItemNo + "," + ItemName + "," + Description + "," + SellPrice + "," + Quantity;
         
-        if(ChannelNo.isEmpty() || DoctorName.isEmpty() || PatientName.isEmpty() || RoomNo.isEmpty() || Date.isEmpty())
+        if(ItemNo.isEmpty() || ItemName.isEmpty() || Description.isEmpty() || SellPrice.isEmpty() || Quantity.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Please Fill up all fields", "Try Again", JOptionPane.ERROR_MESSAGE);
         }
         else
         {
-            DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-            model.addRow(new Object[] {ChannelNo, DoctorName, PatientName, RoomNo, Date});
-            ChannelNotxt.setText("");
-            DoctorNameChTxt.setText("");
-            PatientNameChTxt.setText("");
-            RoomNoChTxt.setText("");
-            DateChTxt.setText("");     
+            DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+            model.addRow(new Object[] {ItemNo, ItemName, Description, SellPrice, Quantity});
+            ItemNotxt.setText("");
+            ItemNametxt.setText("");
+            DescriptionTxt.setText("");
+            priceTxt.setText("");
+            QuantityTxt.setText("");    
         }
-        saveToFile(ChannelData);
+        saveToFile(ItemData);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void saveToFile(String ChannelData){
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter ("ChannelData.txt", true))){
-            writer.write(ChannelData + "\n");
+    private void saveToFile(String ItemData){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter ("ItemData.txt", true))){
+            writer.write(ItemData + "\n");
         }
         catch (IOException e)
         {
@@ -366,8 +365,8 @@ public class Channel extends javax.swing.JFrame {
     
     private void loadDataFromFile()
     {
-        File file = new File("ChannelData.txt");
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        File file = new File("ItemData.txt");
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
         
         if(file.exists())
         {
@@ -375,10 +374,10 @@ public class Channel extends javax.swing.JFrame {
                 String line;
                 while ((line = reader.readLine()) != null)
                 { 
-                    String[] ChannelData = line.split(",");
-                    if(ChannelData.length == 5)
+                    String[] ItemData = line.split(",");
+                    if(ItemData.length == 5)
                     {
-                        model.addRow(ChannelData);
+                        model.addRow(ItemData);
                     }
                 }
             }
@@ -388,21 +387,21 @@ public class Channel extends javax.swing.JFrame {
             }
         }
     }
-    private void ChannelNotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChannelNotxtActionPerformed
+    private void ItemNotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemNotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ChannelNotxtActionPerformed
+    }//GEN-LAST:event_ItemNotxtActionPerformed
 
-    private void PatientNameChTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientNameChTxtActionPerformed
+    private void DescriptionTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PatientNameChTxtActionPerformed
+    }//GEN-LAST:event_DescriptionTxtActionPerformed
 
-    private void RoomNoChTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoomNoChTxtActionPerformed
+    private void priceTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RoomNoChTxtActionPerformed
+    }//GEN-LAST:event_priceTxtActionPerformed
 
-    private void DateChTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateChTxtActionPerformed
+    private void QuantityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DateChTxtActionPerformed
+    }//GEN-LAST:event_QuantityTxtActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -411,48 +410,49 @@ public class Channel extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
+    private void jTable4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable4MouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
         
         //set data to text field when raw is selected
         
-        String ChannelNo = model.getValueAt(jTable3.getSelectedRow(),0).toString();
-        String DoctorName = model.getValueAt(jTable3.getSelectedRow(),1).toString();
-        String PatientName = model.getValueAt(jTable3.getSelectedRow(),2).toString();
-        String RoomNo = model.getValueAt(jTable3.getSelectedRow(),3).toString();
-        String Date = model.getValueAt(jTable3.getSelectedRow(),4).toString();
+        String ItemNo = model.getValueAt(jTable4.getSelectedRow(),0).toString();
+        String ItemName = model.getValueAt(jTable4.getSelectedRow(),1).toString();
+        String Description = model.getValueAt(jTable4.getSelectedRow(),2).toString();
+        String SellPrice = model.getValueAt(jTable4.getSelectedRow(),3).toString();
+        String Quantity = model.getValueAt(jTable4.getSelectedRow(),4).toString();
         
         // set to textfiled
-        ChannelNotxt.setText(ChannelNo);
-        DoctorNameChTxt.setText(DoctorName);
-        PatientNameChTxt.setText(PatientName);
-        RoomNoChTxt.setText(RoomNo);
-        DateChTxt.setText(Date);
-    }//GEN-LAST:event_jTable3MouseClicked
+        
+        ItemNotxt.setText(ItemNo);
+        ItemNametxt.setText(ItemName);
+        DescriptionTxt.setText(Description);
+        priceTxt.setText(SellPrice);
+        QuantityTxt.setText(Quantity);
+    }//GEN-LAST:event_jTable4MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-        if(jTable3.getSelectedRowCount() == 1)
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        if(jTable4.getSelectedRowCount() == 1)
         {
             // if selected one row
-            String ChannelNo = ChannelNotxt.getText();
-            String DoctorName = DoctorNameChTxt.getText();
-            String PatientName = PatientNameChTxt.getText();
-            String RoomNo = RoomNoChTxt.getText();
-            String Date = DateChTxt.getText();
+            String ItemNo = ItemNotxt.getText();
+            String ItemName = ItemNametxt.getText();
+            String Description = DescriptionTxt.getText();
+            String SellPrice = priceTxt.getText();
+            String Quantity = QuantityTxt.getText();
             
-            model.setValueAt(ChannelNo, jTable3.getSelectedRow(), 0);
-            model.setValueAt(DoctorName, jTable3.getSelectedRow(), 1);
-            model.setValueAt(PatientName, jTable3.getSelectedRow(), 2);
-            model.setValueAt(RoomNo, jTable3.getSelectedRow(), 3);
-            model.setValueAt(Date, jTable3.getSelectedRow(), 4);
+            model.setValueAt(ItemNo, jTable4.getSelectedRow(), 0);
+            model.setValueAt(ItemName, jTable4.getSelectedRow(), 1);
+            model.setValueAt(Description, jTable4.getSelectedRow(), 2);
+            model.setValueAt(SellPrice, jTable4.getSelectedRow(), 3);
+            model.setValueAt(Quantity, jTable4.getSelectedRow(), 4);
             
             JOptionPane.showMessageDialog(this, "Updated Successfully.");
         }
         else{
-            if(jTable3.getRowCount()==0){
+            if(jTable4.getRowCount()==0){
                 JOptionPane.showMessageDialog(this, "Table is empty.");
             }
             else{
@@ -480,13 +480,13 @@ public class Channel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Channel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -496,17 +496,16 @@ public class Channel extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Channel().setVisible(true);
+                new Item().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ChannelNotxt;
-    private javax.swing.JTextField DateChTxt;
-    private javax.swing.JTextField DoctorNameChTxt;
-    private javax.swing.JTextField PatientNameChTxt;
-    private javax.swing.JTextField RoomNoChTxt;
+    private javax.swing.JTextField DescriptionTxt;
+    private javax.swing.JTextField ItemNametxt;
+    private javax.swing.JTextField ItemNotxt;
+    private javax.swing.JTextField QuantityTxt;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -520,6 +519,7 @@ public class Channel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTextField priceTxt;
     // End of variables declaration//GEN-END:variables
 }

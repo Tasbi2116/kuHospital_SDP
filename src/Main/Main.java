@@ -39,11 +39,17 @@ public class Main extends javax.swing.JFrame {
         jLabel5.setText(usertype);
         
         this.newid = userID;
-        
-//        if(userType.equals("Doctor"))
+        String uType = jLabel5.getText();
+        if(uType.equals("pharmacist"))
+        {
+            jButton1.setVisible(false);
+            jButton3.setVisible(false);
+            jButton7.setVisible(false);
+        }
+//        if(userType.equals("pharmacist"))
 //        {
+//            jButton1.setVisible(false);
 //            jButton3.setVisible(false);
-//            jButton6.setVisible(false);
 //            jButton7.setVisible(false);
 //        }
     }
@@ -132,6 +138,11 @@ public class Main extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton6.setText("Create Item");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton7.setText("Create User");
@@ -376,6 +387,15 @@ public class Main extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+
+
+        // TODO add your handling code here:
+        Item I = new Item();
+        I.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

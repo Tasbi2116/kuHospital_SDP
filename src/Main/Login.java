@@ -181,15 +181,28 @@ public class Login extends javax.swing.JFrame {
           userType = textcombobox.getSelectedItem().toString();
           if(username.equals("") || password.equals("")){
               JOptionPane.showMessageDialog(this, "Please Enter Credentials");
+              textusername.setText("");
+              textpass.setText("");
+              textcombobox.setSelectedIndex(-1);
+              textusername.requestFocus();
           }
           else{
               if(isLoginSuccessful(username, password)){
                   JOptionPane.showMessageDialog(this, "Login successful");
                   Main m = new Main(username, userType, userID);
                   m.setVisible(true);
+                  textusername.setText("");
+                  textpass.setText("");
+                  textcombobox.setSelectedIndex(-1);
+                  textusername.requestFocus();
+                  this.setVisible(false);
               }
               else{
                   JOptionPane.showMessageDialog(this, "User not found");
+                  textusername.setText("");
+                  textpass.setText("");
+                  textcombobox.setSelectedIndex(-1);
+                  textusername.requestFocus();
               }
           }   
 //        try{

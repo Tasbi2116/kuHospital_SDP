@@ -299,10 +299,18 @@ public class User extends javax.swing.JFrame {
                 writer.close();
                 JOptionPane.showMessageDialog(this, "Registration successful");
                 
+                textID.setText("");
+                textName.setText("");
+                textUserName.setText("");
+                textPassword.setText("");
+                textUserType.setSelectedIndex(-1);
+                
+                textID.requestFocus();
+                
             }
             catch(IOException e){
                 e.printStackTrace();
-               JOptionPane.showMessageDialog(this, "File not found");
+                JOptionPane.showMessageDialog(this, "File not found");
             }
         }
         else{
@@ -372,6 +380,7 @@ public class User extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         login(userType, ID);
+        this.setVisible(false);
         
     }//GEN-LAST:event_jButton3ActionPerformed
     private void login (String userType, String userID){

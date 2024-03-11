@@ -100,6 +100,11 @@ public class Main extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton2.setText("Doctor");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton3.setText("Create Channel");
@@ -282,8 +287,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Patient_reg p = new Patient_reg();
-        p.setVisible(true);
+        Patient P = new Patient();
+        P.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -319,6 +324,12 @@ public class Main extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Doctor D = new Doctor();
+        D.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

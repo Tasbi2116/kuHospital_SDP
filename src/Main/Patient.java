@@ -25,12 +25,12 @@ import javax.swing.RowFilter;
  *
  * @author user
  */
-public class Patient_reg extends javax.swing.JFrame {
+public class Patient extends javax.swing.JFrame {
 
     /**
      * Creates new form Patient_reg
      */
-    public Patient_reg() {
+    public Patient() {
         initComponents();
         loadDataFromFile();
     }
@@ -118,9 +118,9 @@ public class Patient_reg extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtpname, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                    .addComponent(txtpname)
                     .addComponent(patientnotxt)
-                    .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                    .addComponent(txtphone)
                     .addComponent(jScrollPane1))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
@@ -167,7 +167,12 @@ public class Patient_reg extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        jButton3.setText("Delete");
+        jButton3.setText("Back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         jButton4.setText("Exit");
@@ -376,6 +381,13 @@ public class Patient_reg extends javax.swing.JFrame {
         // TODO add your handling code here
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Main m = new Main();
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     
 
     /**
@@ -395,20 +407,21 @@ public class Patient_reg extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Patient_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Patient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Patient_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Patient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Patient_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Patient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Patient_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Patient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Patient_reg().setVisible(true);
+                new Patient().setVisible(true);
             }
         });
     }
